@@ -9,12 +9,18 @@ computer_lives = 5
 
 #let the AI make a choice
 computer=choices[randint(0,2)]
-
+#player=input
 #set up a game loop here so we don't have to keep restarting
 player=False
 
 while player is False:
-	player=input("choose Rock, Paper or Scissors: \n")
+	print("==========================================\n")
+	print("Computer Lives", computer_lives, "/5\n")
+	print("Player Lives", player_lives, "/5\n")
+	print("==========================================\n")
+	print("Choose Your Weapon!\n")
+	player=input("choose rock paper or scissors: \n")
+	#player=input("choose Rock, Paper or Scissors: \n")
 	
 	#start doing some logic and condition checking
 	print("computer:", computer, "player:", player)
@@ -30,21 +36,59 @@ while player is False:
 	elif player == "rock":
 		if computer == "Paper":
 			print("You lose!", computer, "covers", player, "\n")
+			player_lives = player_lives -1
 		else:
 			print("You won!", player, "smashes", computer, "\n")
+			computer_lives = computer_lives -1
 	elif player == "paper":
 		if computer == "Scissors":
 			print("You lose!", computer, "cuts", player, "\n")
+			player_lives = player_lives -1
 		else:
 			print("You won!", player, "covers", computer, "\n")
+			computer_lives = computer_lives -1
 
 	elif player == "Scissors":
 		if computer == "Rock":
 			print("You lose!", computer, "smashes", player, "\n")
+			player_lives = player_lives -1
 		else:
 			print("You won!", player, "cuts", computer, "\n")	
-	
+			computer_lives = computer_lives -1
+	if player_lives is 0:
+		print("You lost ya loser! Wanna go again?")
+		choice = input("Y / N?")
 
-	player = False
-	computer=choices[randint(0,2)]
+		if choice == "Y" or choice == "y":
+			#reset the game and start all over again
+			player_lives = 5
+			computer_lives = 5
+			player = False
+			computer= choices [randint(0,2)]
+
+		elif choice == "N" or choice == "n":
+			print("You chose to quit. better luck next time!")
+			exit()
+		else:
+			print("Make a valid choice. Yes or NO!")
+
+	elif computer_lives is 0:
+		print("You won! Would you like to play again?")
+		choice = input("Y / N?")
+
+		if choice == "Y" or choice == "y":
+			#reset the game and start all over again
+			player_lives = 5
+			computer_lives = 5
+			player = False
+			computer= choices [randint(0,2)]
+
+		elif choice == "N" or choice == "n":
+			print("You chose to quit. better luck next time!")
+			exit()
+		else:
+			print("Make a valid choice. Yes or NO!")
+	else:
+		player = False
+		computer=choices[randint(0,2)]
 
