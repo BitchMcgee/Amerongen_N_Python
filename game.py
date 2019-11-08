@@ -2,10 +2,10 @@
 from random import randint
 
 # 'basket' of choices
-choices=["rock","paper","scissors"]
+choices=["cap","spidey","stark"]
 
-player_lives = 1
-computer_lives = 1
+player_lives = 3
+computer_lives = 3
 
 #let the AI make a choice
 computer=choices[randint(0,2)]
@@ -15,7 +15,7 @@ player=False
 
 def winorlose(status):
 	print("called win or lose", status)
-	print("You", status, "! Would you like to play again?")
+	print("You", status, "! Can You do this all day?")
 	choice = input("Y / N?")
 
 	if choice == "Y" or choice == "y":
@@ -24,8 +24,8 @@ def winorlose(status):
 		global player
 		global computer
 		#reset the game and start all over again
-		player_lives = 1
-		computer_lives = 1
+		player_lives = 3
+		computer_lives = 3
 		player = False
 		computer= choices [randint(0,2)]
 
@@ -33,15 +33,15 @@ def winorlose(status):
 		print("You chose to quit. better luck next time!")
 		exit()
 	else:
-		print("Make a valid choice. Yes or NO!")
+		print("That's a yes or no question.")
 
 while player is False:
 	print("==========================================\n")
 	print("Computer Lives", computer_lives, "/5\n")
 	print("Player Lives", player_lives, "/5\n")
 	print("==========================================\n")
-	print("Choose Your Weapon!\n")
-	player=input("choose rock paper or scissors: \n")
+	print("Choose Your Avenger!\n")
+	player=input("choose cap spidey or stark: \n")
 	#player=input("choose Rock, Paper or Scissors: \n")
 	
 	#start doing some logic and condition checking
@@ -49,36 +49,36 @@ while player is False:
 
 	# always check a breaking condition first
 	if player==computer:
-		print("tie, nobody wins")
+		print("Tie. No matter who wins or loses, trouble still comes around.")
 
 	elif player == "quit":
-		print("you chose to quit, quitter.")
+		print("The world needs you. And you walk out on us.")
 		exit()
 
-	elif player == "rock":
-		if computer == "paper":
-			print("You lose!", computer, "covers", player, "\n")
+	elif player == "cap":
+		if computer == "spidey":
+			print("Round lost!", computer, "shield-webs", player, "\n")
 			player_lives = player_lives -1
 		else:
-			print("You won!", player, "smashes", computer, "\n")
+			print("Round won!", player, "deflects", computer, "\n")
 			computer_lives = computer_lives -1
-	elif player == "paper":
-		if computer == "scissors":
-			print("You lose!", computer, "cuts", player, "\n")
+	elif player == "spidey":
+		if computer == "stark":
+			print("Round lost!", computer, "de-suits", player, "\n")
 			player_lives = player_lives -1
 		else:
-			print("You won!", player, "covers", computer, "\n")
+			print("Round won!", player, "shield-webs", computer, "\n")
 			computer_lives = computer_lives -1
 
-	elif player == "Scissors":
-		if computer == "rock":
-			print("You lose!", computer, "smashes", player, "\n")
+	elif player == "stark":
+		if computer == "cap":
+			print("Round lost!", computer, "deflects", player, "\n")
 			player_lives = player_lives -1
 		else:
-			print("You won!", player, "cuts", computer, "\n")	
+			print("Round won!", player, "de-suits", computer, "\n")	
 			computer_lives = computer_lives -1
 	if player_lives is 0:
-	 	winorlose("lost")
+	 	winorlose("have been defeated")
 	# 	print("You lost ya loser! Wanna go again?")
 	# 	choice = input("Y / N?")
 
@@ -96,7 +96,7 @@ while player is False:
 	# 		print("Make a valid choice. Yes or NO!")
 
 	elif computer_lives is 0:
-		winorlose("won")
+		winorlose("are victorious")
 	# 	print("You won! Would you like to play again?")
 	# 	choice = input("Y / N?")
 
