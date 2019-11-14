@@ -1,12 +1,10 @@
 # import the random package so we can generate a random AI choice
 from random import randint
-
 # 'basket' of choices
 choices=["rock","paper","scissors"]
 
 player_lives = 1
 computer_lives = 1
-
 #let the AI make a choice
 computer=choices[randint(0,2)]
 #player=input
@@ -37,6 +35,7 @@ def winorlose(status):
 
 while player is False:
 	print("==========================================\n")
+	image.open(Images/Underoos.gif)
 	print("Computer Lives", computer_lives, "/5\n")
 	print("Player Lives", player_lives, "/5\n")
 	print("==========================================\n")
