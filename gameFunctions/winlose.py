@@ -14,7 +14,7 @@ def winorlose(status):
 		gameVars.computer= gameVars.choices [randint(0,2)]
 
 	elif choice == "N" or choice == "n":
-		print("You chose to quit. better luck next time!")
+		print("You're gonna quit? Not much of an Avenger.")
 		exit()
 	else:
 		print("That's a yes or no question.")
