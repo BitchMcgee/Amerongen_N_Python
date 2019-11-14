@@ -6,11 +6,12 @@ while gameVars.player is False:
 	print("===*===*===*===*===*===*===*===*===*===*===*===*===*===\n")
 	print("Computer Lives", gameVars.computer_lives, "/", gameVars.total_lives)
 	print("Player Lives", gameVars.player_lives, "/", gameVars.total_lives)
-	print("===*===*===*===*===*===*===*===*===*===*===*===*===*===\n")
 	print("Select Your Avenger!\n")
+	print("===*===*===*===*===*===*===*===*===*===*===*===*===*===\n")
+	
 	gameVars.computer=gameVars.choices[randint(0,2)]
 	player=input("choose cap spidey or stark: \n")
-	print("Oponent:", gameVars.computer, "Hero:", player)
+	print("Opponent:", gameVars.computer, "Hero:", player)
 	
 	compare.compareChoices(player)
 	
