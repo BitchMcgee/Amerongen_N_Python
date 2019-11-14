@@ -3,14 +3,14 @@ from random import randint
 from gameFunctions import winlose, gameVars, compare
 gameVars.computer=gameVars.choices[randint(0,2)]
 while gameVars.player is False:
-	print("==========================================\n")
+	print("===*===*===*===*===*===*===*===*===*===*===*===*===*===\n")
 	print("Computer Lives", gameVars.computer_lives, "/", gameVars.total_lives)
 	print("Player Lives", gameVars.player_lives, "/", gameVars.total_lives)
-	print("==========================================\n")
-	print("Choose Your Avenger!\n")
+	print("===*===*===*===*===*===*===*===*===*===*===*===*===*===\n")
+	print("Select Your Avenger!\n")
 	gameVars.computer=gameVars.choices[randint(0,2)]
 	player=input("choose cap spidey or stark: \n")
-	print("computer:", gameVars.computer, "player:", player)
+	print("Oponent:", gameVars.computer, "Hero:", player)
 	
 	compare.compareChoices(player)
 	
